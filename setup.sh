@@ -140,8 +140,8 @@ reject_unsafe() {
   local var="$1"
   local value="${!var:-}"
   case "$value" in
-    *'"'*|*'\'*|*' '*|*$'\t'*|*$'\n'*)
-      err "$var cannot contain quotes, backslashes, or whitespace"
+    *'"'*|*'\'*|*$'\t'*|*$'\n'*)
+      err "$var cannot contain quotes, backslashes, tabs, or newlines"
       exit 1
       ;;
   esac
